@@ -19,6 +19,10 @@ const List = styled.div`
         padding: 5px;
         margin-bottom: 5px;
     }
+
+    @media (max-width: 768px) {
+        padding-bottom: 1px;
+    }
 `
 
 export default List
