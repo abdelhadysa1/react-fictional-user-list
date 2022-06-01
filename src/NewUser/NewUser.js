@@ -29,7 +29,10 @@ const NewUser = ({ onAddUser }) => {
         }
     }
     return (
-        <UserForm handleChange={handleChange} handleSubmit={handleSubmit} username={userInput.username} age={userInput.age} />
+        <>
+            <h2>Add New User</h2>
+            <UserForm handleChange={handleChange} handleSubmit={handleSubmit} username={userInput.username} age={userInput.age} />
+        </>
     )
 }
 

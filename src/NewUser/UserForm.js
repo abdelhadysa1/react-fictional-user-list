@@ -1,12 +1,22 @@
 import React from 'react'
+import { Form, FormControl } from '../UI/Form'
+import Button from '../UI/Button'
 
 const UserForm = ({ handleChange, handleSubmit, username, age }) => {
     return (
-        <form onSubmit={handleSubmit}>
-            <input onChange={handleChange} type={'text'} name='username' value={username}></input>
-            <input onChange={handleChange} type={'number'} min={1} max={100} step={1} name='age' value={age}></input>
-            <button type='submit'>Add User</button>
-        </form>
+        <Form onSubmit={handleSubmit}>
+            <FormControl>
+                <label for=''>Username</label>
+                <input id='userFormUsername' placeholder='Type your username here' onChange={handleChange} type={'text'} name='username' value={username}></input>
+            </FormControl>
+            <FormControl>
+                <label for='userFormAge'>Age (1-100Yrs)</label>
+                <input id='userFormAge' placeholder='How old are you?' onChange={handleChange} type={'number'} min={1} max={100} step={1} name='age' value={age}></input>
+            </FormControl>
+            <FormControl>
+                <Button type='submit'>Add User</Button>
+            </FormControl>
+        </Form>
     )
 }
 

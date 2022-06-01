@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
+
+// Components
 import UserList from './UserList/UserList'
 import NewUser from './NewUser/NewUser'
 
+// UI components
+import Container from './UI/Container'
+
+// Validators
 import validateUsername from './utils/validateUsername'
 import validateAge from './utils/validateAge'
 
@@ -32,10 +38,11 @@ function App() {
     ])
   }
   return (
-    <>
+    <Container>
+      <h1>Fictional User List</h1>
       <NewUser onAddUser={addUser} />
       <UserList userList={userList} />
-    </>
+    </Container>
   );
 }
 
