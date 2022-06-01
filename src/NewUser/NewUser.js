@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import UserForm from './UserForm'
 
+const DEFAULT_USER_INPUT = {
+    username: '',
+    age: '',
+}
+
 const NewUser = ({ onAddUser, onAddAlert }) => {
-    const [ userInput, changeUserInput ] = useState({
-        username: '',
-        age: '',
-    })
+    const [ userInput, changeUserInput ] = useState(DEFAULT_USER_INPUT)
     const handleChange = (e) => {
         changeUserInput((prevUserInput) => {
             return {
@@ -19,6 +21,7 @@ const NewUser = ({ onAddUser, onAddAlert }) => {
         const { username, age } = userInput
         try {
             onAddUser(username, parseFloat(age))
+            changeUserInput(DEFAULT_USER_INPUT)
         } catch (e) {
             console.log(e)
             onAddAlert(true, 'Error', e.message, 'I understand.')
