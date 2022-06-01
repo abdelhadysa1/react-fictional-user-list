@@ -7,6 +7,7 @@ const Form = styled.form`
     background-color: white;
     padding: 10px;
     border-top: 5px solid purple;
+    box-sizing: border-box;
 `
 
 const FormControl = styled.div`
