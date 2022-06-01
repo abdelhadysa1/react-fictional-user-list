@@ -1,8 +1,10 @@
 import React from 'react'
 
-const UserList = (props) => {
+const UserList = ({ userList }) => {
     return (
-        <></>
+        <>
+            {userList.map((user) => <li key={user.username}>{user.username} (Age: {user.age})</li>)}
+        </>
     )
 }
 
