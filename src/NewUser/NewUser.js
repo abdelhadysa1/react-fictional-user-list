@@ -1,10 +1,7 @@
 import React, { useState } from 'react'
 import UserForm from './UserForm'
 
-import validateUsername from '../utils/validateUsername'
-import validateAge from '../utils/validateAge'
-
-const NewUser = ({ onAddUser }) => {
+const NewUser = ({ onAddUser, onAddAlert }) => {
     const [ userInput, changeUserInput ] = useState({
         username: '',
         age: '',
@@ -21,11 +18,10 @@ const NewUser = ({ onAddUser }) => {
         e.preventDefault()
         const { username, age } = userInput
         try {
-            if (!validateUsername(username)) throw new Error('Invalid username')
-            if (!validateAge(parseFloat(age))) throw new Error('Invalid age (make sure it is >0 and <100)')
             onAddUser(username, parseFloat(age))
         } catch (e) {
             console.log(e)
+            onAddAlert(true, 'Error', e.message, 'I understand.')
         }
     }
     return (
