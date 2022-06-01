@@ -9,7 +9,7 @@ const Form = styled.form`
     border-top: 5px solid purple;
 `
 
-const FormControl = styled.form`
+const FormControl = styled.div`
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
